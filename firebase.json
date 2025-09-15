@@ -1,0 +1,21 @@
+{
+    "flutter": {
+        "platforms": {
+            "android": {
+                "default": {
+                    "projectId": "rifa-plus-1388d",
+                    "appId": "1:583594575104:android:9b223027ca0875847a5fe5",
+                    "fileOutput": "android/app/google-services.json"
+                }
+            },
+            "dart": {
+                "lib/firebase_options.dart": {
+                    "projectId": "rifa-plus-1388d",
+                    "configurations": {
+                        "android": "1:583594575104:android:9b223027ca0875847a5fe5"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,10 +1,14 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:rifa_plus_app/firebase_options.dart';
+import 'package:rifa_plus_app/core/config/service_locator.dart';
+import 'package:rifa_plus_app/shared/theme/app_theme.dart';
 
 void main() async {
+  // Asegurarse de que los bindings de Flutter estén inicializados
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  // Inicializar Firebase, Hive y otras dependencias
+  await setupLocator();
+
   runApp(const MainApp());
 }
 
@@ -13,8 +17,13 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(body: Center(child: Text('Hello World!'))),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Rifa Plus',
+      theme: AppTheme.darkTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.dark,
+      home: const Scaffold(body: Center(child: Text('Setup Completo!'))),
     );
   }
 }

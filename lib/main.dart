@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:rifa_plus_app/core/config/service_locator.dart';
 import 'package:rifa_plus_app/shared/theme/app_theme.dart';
 
@@ -17,13 +18,13 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: sl<GoRouter>(),
       debugShowCheckedModeBanner: false,
       title: 'Rifa Plus',
       theme: AppTheme.darkTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.dark,
-      home: const Scaffold(body: Center(child: Text('Setup Completo!'))),
     );
   }
 }

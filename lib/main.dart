@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:rifa_plus_app/core/config/service_locator.dart';
+import 'package:rifa_plus_app/core/constants/app_constant.dart';
+import 'package:rifa_plus_app/core/router/app_router.dart'; // Import appRouter
 import 'package:rifa_plus_app/shared/theme/app_theme.dart';
 
 void main() async {
@@ -18,10 +19,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: sl<GoRouter>(),
+    return MaterialApp.router( // Use MaterialApp.router
+      routerConfig: appRouter, // Use the appRouter instance
       debugShowCheckedModeBanner: false,
-      title: 'Rifa Plus',
+      title: AppConstants.nameApp,
       theme: AppTheme.darkTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.dark,
